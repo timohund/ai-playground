@@ -36,6 +36,8 @@ services:
     environment:
       - OLLAMA_URL=${OLLAMA_URL}
       - OLLAMA_API_KEY=${OLLAMA_API_KEY}
+      - EXECUTION_LLM=${EXECUTION_LLM}
+      - REFLECTION_LLM=${REFLECTION_LLM}
 
   postgres:
     image: postgres:15

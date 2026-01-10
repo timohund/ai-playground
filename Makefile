@@ -1,4 +1,4 @@
-all: build up ollama-install-gemini-flash run
+all: build up ollama-install-llama3 ollama-install-tinyllama run
 
 build:
 	docker compose build
@@ -19,20 +19,25 @@ ollama-list:
 	docker compose exec ollama ollama list
 
 ollama-install-llama3:
-	docker compose exec ollama ollama pull llama3
+	docker compose exec ollama ollama pull llama3.1:8b
 
 ollama-rm-llama3:
-	docker compose exec ollama ollama rm llama3
+	docker compose exec ollama ollama rm llama3.1:8b
 
-ollama-install-gemini-flash:
-	docker compose exec ollama ollama pull gemini-3-flash-preview
+ollama-install-deepseek-r1:
+	docker compose exec ollama ollama pull deepseek-r1:32b
 
-ollama-rm-gemini-flash:
-	docker compose exec ollama ollama rm gemini-3-flash-preview
+ollama-rm-deepseek-r1:
+	docker compose exec ollama ollama rm deepseek-r1:32b
+
+ollama-install-mistral-3:
+	docker compose exec ollama ollama pullm mistral-small3.2:24b
+
+ollama-rm-mistral-3:
+	docker compose exec ollama ollama rm mistral-small3.2:24b
 
 ollama-install-tinyllama:
 	docker compose exec ollama ollama pull tinyllama
 
 ollama-rm-tinyllama:
 	docker compose exec ollama ollama rm tinyllama
-
